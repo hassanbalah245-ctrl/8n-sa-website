@@ -1,806 +1,474 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>8th | تسجيل وتأهيل الشركات</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --orange: #ff6a00;
-      --orange-light: #ff8a3d;
-      --black: #0b0b0b;
-      --dark: #111111;
-      --gray: #8b8b8b;
-      --light-gray: #f5f5f5;
-      --white: #ffffff;
-    }
-
-    body {
-      font-family: Arial, Tahoma, sans-serif;
-      background: var(--white);
-      color: var(--black);
-      line-height: 1.7;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: min(1180px, 92%);
-      margin: auto;
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,0.94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid #eeeeee;
-    }
-
-    .navbar {
-      height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 180px;
-    }
-
-    .logo-mark {
-      font-size: 34px;
-      font-weight: 900;
-      letter-spacing: -3px;
-      color: var(--orange);
-      text-shadow: 2px 3px 0 rgba(0,0,0,0.08);
-    }
-
-    .logo-name {
-      font-size: 23px;
-      font-weight: 800;
-      color: var(--black);
-    }
-
-    .logo-sub {
-      display: block;
-      font-size: 9px;
-      color: var(--gray);
-      letter-spacing: 1px;
-      margin-top: -4px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .nav-links a {
-      transition: .3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--orange);
-    }
-
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .phone {
-      direction: ltr;
-      font-size: 14px;
-      font-weight: 700;
-      color: #333;
-    }
-
-    .language {
-      border: 1px solid #ddd;
-      padding: 8px 12px;
-      border-radius: 20px;
-      font-size: 13px;
-      cursor: pointer;
-      background: white;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 15% 30%, rgba(255,106,0,.10), transparent 30%),
-        linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-    }
-
-    .hero-content {
-      max-width: 760px;
-      padding: 90px 0;
-    }
-
-    .hero-tag {
-      display: inline-block;
-      color: var(--orange);
-      background: rgba(255,106,0,.09);
-      border: 1px solid rgba(255,106,0,.18);
-      padding: 7px 15px;
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 6vw, 76px);
-      line-height: 1.12;
-      letter-spacing: -2px;
-      margin-bottom: 22px;
-      font-weight: 900;
-    }
-
-    .hero h1 span {
-      color: var(--orange);
-    }
-
-    .hero p {
-      color: #666;
-      font-size: 19px;
-      max-width: 650px;
-      margin-bottom: 35px;
-    }
-
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--orange);
-      color: white;
-      padding: 15px 30px;
-      border-radius: 10px;
-      font-weight: 800;
-      transition: .3s;
-      box-shadow: 0 10px 25px rgba(255,106,0,.20);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      background: #e85f00;
-    }
-
-    .phone-box {
-      direction: ltr;
-      padding: 14px 20px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      background: white;
-      font-weight: 700;
-    }
-
-    /* =========================
-       SERVICES
-    ========================= */
-
-    .services {
-      padding: 100px 0;
-      background: #0d0d0d;
-      color: white;
-      position: relative;
-    }
-
-    .section-head {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 55px;
-    }
-
-    .section-label {
-      color: var(--orange);
-      font-size: 14px;
-      font-weight: 800;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-    }
-
-    .section-head h2 {
-      font-size: clamp(34px, 5vw, 52px);
-      line-height: 1.2;
-      margin-bottom: 15px;
-    }
-
-    .section-head p {
-      color: #999;
-      font-size: 17px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .service-card {
-      background: #151515;
-      border: 1px solid #252525;
-      border-radius: 20px;
-      padding: 30px;
-      min-height: 260px;
-      position: relative;
-      overflow: hidden;
-      transition: .35s;
-    }
-
-    .service-card::before {
-      content: "";
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      background: rgba(255,106,0,.08);
-      border-radius: 50%;
-      top: -50px;
-      left: -50px;
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(255,106,0,.55);
-      box-shadow: 0 20px 50px rgba(0,0,0,.35);
-    }
-
-    .service-number {
-      color: var(--orange);
-      font-size: 14px;
-      font-weight: 900;
-      margin-bottom: 22px;
-    }
-
-    .service-card h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
-    }
-
-    .service-card p {
-      color: #999;
-      font-size: 14px;
-      margin-bottom: 22px;
-    }
-
-    .service-link {
-      color: var(--orange);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .services-button {
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    /* =========================
-       NUMBERS
-    ========================= */
-
-    .numbers {
-      padding: 90px 0;
-      background: #f7f7f7;
-    }
-
-    .numbers-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      text-align: center;
-    }
-
-    .number-card {
-      background: white;
-      padding: 35px 20px;
-      border-radius: 18px;
-      border: 1px solid #eeeeee;
-    }
-
-    .number-card strong {
-      display: block;
-      font-size: 48px;
-      color: var(--orange);
-      font-weight: 900;
-      margin-bottom: 5px;
-    }
-
-    .number-card span {
-      color: #666;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: #090909;
-      color: white;
-      padding: 35px 0;
-      text-align: center;
-    }
-
-    footer p {
-      color: #888;
-      font-size: 13px;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 900px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      .phone {
-        display: none;
-      }
-
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .numbers-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero {
-        min-height: auto;
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      .navbar {
-        height: 70px;
-      }
-
-      .logo-name {
-        font-size: 19px;
-      }
-
-      .logo-mark {
-        font-size: 28px;
-      }
-
-      .hero-content {
-        padding: 70px 0;
-      }
-
-      .hero h1 {
-        font-size: 43px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .services {
-        padding: 70px 0;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .numbers-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .number-card strong {
-        font-size: 36px;
-      }
-
-      .header-left {
-        gap: 8px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>8N | الرقم الثامن</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --orange: #ff6500;
+  --black: #0b0b0b;
+  --gray: #777;
+  --border: #e7e7e7;
+}
+
+body {
+  font-family: Arial, Tahoma, sans-serif;
+  background: #fff;
+  color: var(--black);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  height: 86px;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+}
+
+.header-inner {
+  width: 92%;
+  max-width: 1450px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-8 {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--orange);
+  letter-spacing: -4px;
+}
+
+.logo-text {
+  text-align: right;
+}
+
+.logo-name {
+  font-size: 27px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.logo-sub {
+  font-size: 10px;
+  color: #999;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+/* NAVIGATION */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.nav a {
+  color: #151515;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  transition: .25s;
+}
+
+.nav a:hover {
+  color: var(--orange);
+}
+
+/* LEFT */
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.phone {
+  direction: ltr;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.lang {
+  width: 55px;
+  height: 42px;
+  border: 1px solid #ddd;
+  border-radius: 22px;
+  background: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: calc(100vh - 86px);
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(255,101,0,.12),
+      transparent 30%
+    ),
+    #fff;
+}
+
+.hero-inner {
+  width: 92%;
+  max-width: 1450px;
+  margin: auto;
+
+  min-height: calc(100vh - 86px);
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hero-content {
+  width: 58%;
+  margin-right: 4%;
+  text-align: right;
+}
+
+.hero-tag {
+  display: inline-block;
+
+  color: var(--orange);
+  background: #fff7f1;
+  border: 1px solid #ffd5bd;
+
+  padding: 10px 20px;
+  border-radius: 30px;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-size: clamp(50px, 5.5vw, 88px);
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: -3px;
+
+  margin-bottom: 28px;
+}
+
+.hero h1 .orange {
+  color: var(--orange);
+}
+
+.hero-description {
+  max-width: 760px;
+
+  color: #555;
+  font-size: 18px;
+  line-height: 2;
+
+  margin-bottom: 35px;
+}
+
+/* ACTIONS */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.btn {
+  background: var(--orange);
+  color: white;
+
+  border: none;
+  border-radius: 12px;
+
+  padding: 18px 38px;
+
+  font-size: 17px;
+  font-weight: 900;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  box-shadow: 0 12px 30px rgba(255,101,0,.18);
+
+  transition: .25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: #e85b00;
+}
+
+.phone-box {
+  direction: ltr;
+
+  border: 1px solid #ddd;
+  background: white;
+
+  border-radius: 12px;
+
+  padding: 17px 25px;
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+/* =========================
+   SIMPLE VISUAL SIDE
+========================= */
+
+.hero-visual {
+  position: absolute;
+  left: 6%;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,101,0,.12),
+      rgba(255,101,0,.03) 55%,
+      transparent 70%
+    );
+}
+
+.hero-visual::after {
+  content: "8N";
+
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 100px;
+  font-weight: 900;
+
+  color: rgba(255,101,0,.08);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+  .nav {
+    display: none;
+  }
+
+  .phone {
+    display: none;
+  }
+
+  .hero-inner {
+    justify-content: center;
+  }
+
+  .hero-content {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    left: 50%;
+    opacity: .6;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 600px) {
+
+  .header {
+    height: 72px;
+  }
+
+  .logo-name {
+    font-size: 20px;
+  }
+
+  .logo-8 {
+    font-size: 29px;
+  }
+
+  .hero {
+    min-height: calc(100vh - 72px);
+  }
+
+  .hero-inner {
+    min-height: calc(100vh - 72px);
+  }
+
+  .hero h1 {
+    font-size: 46px;
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn,
+  .phone-box {
+    width: 100%;
+    text-align: center;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================= -->
+<!-- HEADER -->
 
-  <header>
-    <div class="container navbar">
+<header class="header">
 
-      <a href="#" class="logo">
-        <div class="logo-mark">8N</div>
+  <div class="header-inner">
 
-        <div>
-          <div class="logo-name">الرقم الثامن</div>
-          <span class="logo-sub">VENDOR REGISTRATION & SERVICES</span>
+    <!-- الشعار -->
+    <a href="#" class="logo">
+
+      <div class="logo-8">8N</div>
+
+      <div class="logo-text">
+        <div class="logo-name">
+          الرقم الثامن
         </div>
-      </a>
 
-      <nav class="nav-links">
-        <a href="#">الرئيسية</a>
-        <a href="#services">خدماتنا</a>
-        <a href="#numbers">إنجازاتنا</a>
-        <a href="#about">من نحن</a>
-        <a href="#contact">تواصل معنا</a>
-      </nav>
-
-      <div class="header-left">
-        <span class="phone">+966 5X XXX XXXX</span>
-        <button class="language">EN</button>
+        <div class="logo-sub">
+          VENDOR REGISTRATION & SERVICES
+        </div>
       </div>
+
+    </a>
+
+    <!-- القائمة -->
+    <nav class="nav">
+
+      <a href="#">الرئيسية</a>
+      <a href="#services">خدماتنا</a>
+      <a href="#numbers">إنجازاتنا</a>
+      <a href="#about">من نحن</a>
+      <a href="#contact">تواصل معنا</a>
+
+    </nav>
+
+    <!-- الجوال واللغة -->
+    <div class="header-left">
+
+      <div class="phone">
+        +966 5X XXX XXXX
+      </div>
+
+      <button class="lang">
+        EN
+      </button>
 
     </div>
-  </header>
 
+  </div>
 
-  <!-- =========================
-       HERO / PAGE 1
-  ========================= -->
+</header>
 
-  <main>
 
-    <section class="hero">
-      <div class="container">
+<!-- HERO -->
 
-        <div class="hero-content">
+<section class="hero">
 
-          <div class="hero-tag">
-            تسجيل وتأهيل الشركات
-          </div>
+  <div class="hero-inner">
 
-          <h1>
-            سجل شركتك معنا<br>
-            وأنت <span>مرتاح</span>
-          </h1>
+    <div class="hero-content">
 
-          <p>
-            نساعدك في تسجيل وتأهيل شركتك لدى الجهات والمنصات
-            المختلفة، مع حلول متكاملة للامتثال، الأمن السيبراني،
-            شهادات الآيزو والخدمات التقنية.
-          </p>
-
-          <div class="hero-actions">
-
-            <a href="#contact" class="btn-primary">
-              اطلب الخدمة
-            </a>
-
-            <div class="phone-box">
-              +966 5X XXX XXXX
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- =========================
-         SERVICES / PAGE 2
-    ========================= -->
-
-    <section class="services" id="services">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <div class="section-label">
-            خدماتنا
-          </div>
-
-          <h2>
-            منظومة متكاملة<br>
-            <span style="color:#ff6a00;">لنمو أعمالك</span>
-          </h2>
-
-          <p>
-            نقدم حلولاً متكاملة تساعد الشركات على التسجيل والتأهيل
-            والامتثال، إلى جانب الخدمات التقنية والهوية المؤسسية.
-          </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-          <!-- 01 -->
-          <div class="service-card">
-
-            <div class="service-number">01</div>
-
-            <h3>
-              تسجيل وتأهيل الموردين
-            </h3>
-
-            <p>
-              تسجيل وتأهيل الشركات كموردين ومتابعة المتطلبات
-              والإجراءات حتى اكتمال التسجيل.
-            </p>
-
-            <a href="#" class="service-link">
-              اعرف المزيد ←
-            </a>
-
-          </div>
-
-
-          <!-- 02 -->
-          <div class="service-card">
-
-            <div class="service-number">02</div>
-
-            <h3>
-              الامتثال والضوابط
-            </h3>
-
-            <p>
-              تجهيز ومراجعة متطلبات وضوابط التسجيل والامتثال
-              ورفع جاهزية منشأتك.
-            </p>
-
-            <a href="#" class="service-link">
-              اعرف المزيد ←
-            </a>
-
-          </div>
-
-
-          <!-- 03 -->
-          <div class="service-card">
-
-            <div class="service-number">03</div>
-
-            <h3>
-              شهادات الآيزو
-            </h3>
-
-            <p>
-              المساعدة في تجهيز الشركات للحصول على شهادات
-              الآيزو المناسبة لنشاطها.
-            </p>
-
-            <a href="#" class="service-link">
-              اعرف المزيد ←
-            </a>
-
-          </div>
-
-
-          <!-- 04 -->
-          <div class="service-card">
-
-            <div class="service-number">04</div>
-
-            <h3>
-              الأمن السيبراني
-            </h3>
-
-            <p>
-              حلول وخدمات تساعد منشأتك على رفع مستوى الحماية
-              والجاهزية السيبرانية.
-            </p>
-
-            <a href="#" class="service-link">
-              اعرف المزيد ←
-            </a>
-
-          </div>
-
-
-          <!-- 05 -->
-          <div class="service-card">
-
-            <div class="service-number">05</div>
-
-            <h3>
-              Microsoft 365 والبريد المؤسسي
-            </h3>
-
-            <p>
-              إعداد وإدارة حلول Microsoft 365 والبريد الإلكتروني
-              المؤسسي لعملك.
-            </p>
-
-            <a href="#" class="service-link">
-              اعرف المزيد ←
-            </a>
-
-          </div>
-
-
-          <!-- 06 -->
-          <div class="service-card">
-
-            <div class="service-number">06</div>
-
-            <h3>
-              الدومين والاستضافة
-            </h3>
-
-            <p>
-              توفير وإدارة الدومينات والاستضافة المناسبة
-              لموقع شركتك.
-            </p>
-
-            <a href="#" class="service-link">
-              اعرف المزيد ←
-            </a>
-
-          </div>
-
-
-          <!-- 07 -->
-          <div class="service-card">
-
-            <div class="service-number">07</div>
-
-            <h3>
-              الهوية البصرية للشركات
-            </h3>
-
-            <p>
-              إنشاء هوية بصرية متكاملة تشمل الشعار والألوان
-              والخطوط والعناصر الأساسية للعلامة التجارية.
-            </p>
-
-            <a href="#" class="service-link">
-              اعرف المزيد ←
-            </a>
-
-          </div>
-
-
-          <!-- 08 -->
-          <div class="service-card">
-
-            <div class="service-number">08</div>
-
-            <h3>
-              تصميم وتطوير المواقع
-            </h3>
-
-            <p>
-              تصميم مواقع احترافية ومتجاوبة باللغة العربية
-              والإنجليزية بما يناسب نشاط شركتك.
-            </p>
-
-            <a href="#" class="service-link">
-              اعرف المزيد ←
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <div class="services-button">
-          <a href="#contact" class="btn-primary">
-            اطلب الخدمة
-          </a>
-        </div>
-
+      <div class="hero-tag">
+        تسجيل وتأهيل الشركات
       </div>
 
-    </section>
+      <h1>
+        سجل شركتك معنا
+        <br>
+        وأنت
+        <span class="orange">مرتاح</span>
+      </h1>
 
-
-    <!-- =========================
-         NUMBERS
-    ========================= -->
-
-    <section class="numbers" id="numbers">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <div class="section-label">
-            إنجازاتنا بالأرقام
-          </div>
-
-          <h2>
-            أرقام تتحدث عن خبرتنا
-          </h2>
-
-          <p>
-            نعمل على تقديم خدمات احترافية تساعد الشركات
-            على الوصول إلى أهدافها بثقة.
-          </p>
-
-        </div>
-
-
-        <div class="numbers-grid">
-
-          <div class="number-card">
-            <strong>2+</strong>
-            <span>سنوات من الخبرة</span>
-          </div>
-
-          <div class="number-card">
-            <strong>0+</strong>
-            <span>شركة تم خدمتها</span>
-          </div>
-
-          <div class="number-card">
-            <strong>0+</strong>
-            <span>عملية تسجيل وتأهيل</span>
-          </div>
-
-          <div class="number-card">
-            <strong>0%</strong>
-            <span>اهتمام بالجودة</span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
-  <footer id="contact">
-
-    <div class="container">
-
-      <p>
-        © 2026 الرقم الثامن 8N — جميع الحقوق محفوظة
+      <p class="hero-description">
+        نساعدك في تسجيل وتأهيل شركتك لدى الجهات والمنصات المختلفة،
+        مع حلول متكاملة للامتثال، الأمن السيبراني، شهادات الآيزو
+        والخدمات التقنية.
       </p>
 
+      <div class="hero-actions">
+
+        <a href="#contact" class="btn">
+          اطلب الخدمة
+        </a>
+
+        <div class="phone-box">
+          +966 5X XXX XXXX
+        </div>
+
+      </div>
+
     </div>
 
-  </footer>
+  </div>
+
+  <div class="hero-visual"></div>
+
+</section>
 
 </body>
 </html>
