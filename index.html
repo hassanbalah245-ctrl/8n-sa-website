@@ -5,74 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>8N | Digital Business Solutions</title>
-
-    <meta
-        name="description"
-        content="8N provides digital business solutions, vendor registration, cybersecurity, Microsoft 365, web development and ISO consulting in Saudi Arabia."
-    >
+    <title>8N | Digital Solutions</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 
     <style>
 
-        /* =========================================
-           ROOT
-        ========================================= */
-
         :root {
-            --navy: #07182f;
-            --navy-2: #0b2343;
-            --navy-3: #102d52;
-
-            --gold: #d8ad52;
-            --gold-light: #e7c878;
-
-            --white: #ffffff;
-            --text: #18243a;
-            --muted: #687386;
-
-            --green: #20c968;
-            --green-dark: #15964c;
+            --black: #0d0d0d;
+            --black-2: #151515;
+            --black-3: #1d1d1d;
 
             --orange: #ff7a00;
-            --orange-dark: #df6500;
+            --orange-dark: #d95f00;
 
-            --border: rgba(255,255,255,.12);
+            --white: #ffffff;
+            --gray: #a7a7a7;
 
-            --shadow:
-                0 20px 60px rgba(0,0,0,.18);
+            --green: #25d366;
+            --call: #18a957;
         }
-
-
-        /* =========================================
-           RESET
-        ========================================= */
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: "Inter", Arial, sans-serif;
-            background: #f7f8fa;
-            color: var(--text);
+            background: var(--black);
+            color: white;
             overflow-x: hidden;
         }
 
-        body.arabic {
+        body.ar {
             font-family: "Tajawal", Arial, sans-serif;
         }
 
@@ -86,163 +57,115 @@
         }
 
 
-        /* =========================================
+        /* =========================
            HEADER
-        ========================================= */
+        ========================= */
 
-        .header {
+        header {
             position: fixed;
             top: 0;
             left: 0;
 
             width: 100%;
-            height: 88px;
+            height: 82px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            padding: 0 5%;
+            padding: 0 6%;
 
-            background: rgba(7,24,47,.28);
-
+            background: rgba(13, 13, 13, .22);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
 
-            border-bottom: 1px solid rgba(255,255,255,.08);
+            border-bottom: 1px solid rgba(255,255,255,.06);
 
             z-index: 9999;
 
             transition: .3s ease;
         }
 
-        .header.scrolled {
-            background: rgba(7,24,47,.88);
-            box-shadow: 0 10px 40px rgba(0,0,0,.15);
+        header.scrolled {
+            background: rgba(13,13,13,.88);
         }
 
 
-        /* =========================================
-           8N LOGO
-        ========================================= */
+        /* LOGO */
 
-        .brand {
+        .logo {
             display: flex;
             align-items: center;
             gap: 10px;
-
-            min-width: 180px;
         }
 
-        .brand-mark {
-            width: 52px;
-            height: 52px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border: 2px solid var(--gold);
-
-            color: var(--gold);
-
-            font-size: 24px;
+        .logo-mark {
+            color: var(--orange);
+            font-size: 30px;
             font-weight: 800;
-
-            border-radius: 14px;
-
-            transform: rotate(45deg);
+            letter-spacing: -2px;
         }
 
-        .brand-mark span {
-            transform: rotate(-45deg);
-        }
-
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1;
-        }
-
-        .brand-text strong {
-            color: var(--white);
-            font-size: 20px;
+        .logo-name {
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
             letter-spacing: 2px;
         }
 
-        .brand-text small {
-            color: var(--gold);
-            font-size: 9px;
-            letter-spacing: 2px;
-            margin-top: 6px;
-        }
 
+        /* NAV */
 
-        /* =========================================
-           NAVIGATION
-        ========================================= */
-
-        .nav {
+        nav {
             display: flex;
             align-items: center;
             gap: 34px;
         }
 
-        .nav a {
-            position: relative;
-
-            color: rgba(255,255,255,.9);
-
+        nav a {
+            color: rgba(255,255,255,.82);
             font-size: 14px;
             font-weight: 600;
-
-            padding: 8px 0;
-
+            position: relative;
             transition: .3s ease;
         }
 
-        .nav a::after {
+        nav a::after {
             content: "";
 
             position: absolute;
             left: 0;
-            bottom: 0;
+            bottom: -8px;
 
             width: 0;
             height: 2px;
 
-            background: var(--gold);
+            background: var(--orange);
 
             transition: .3s ease;
         }
 
-        .nav a:hover {
-            color: var(--gold-light);
+        nav a:hover {
+            color: var(--orange);
         }
 
-        .nav a:hover::after {
+        nav a:hover::after {
             width: 100%;
         }
 
 
-        /* =========================================
-           HEADER RIGHT
-        ========================================= */
+        /* HEADER ACTIONS */
 
-        .header-right {
+        .header-actions {
             display: flex;
             align-items: center;
-            gap: 12px;
-
-            min-width: 250px;
-            justify-content: flex-end;
+            gap: 10px;
         }
 
-        .language-btn {
-            border: 1px solid rgba(255,255,255,.18);
+        .language {
+            border: 1px solid rgba(255,255,255,.15);
 
-            background: rgba(255,255,255,.04);
-
+            background: transparent;
             color: white;
 
             padding: 9px 14px;
@@ -257,32 +180,53 @@
             transition: .3s ease;
         }
 
-        .language-btn:hover {
-            border-color: var(--gold);
-            color: var(--gold-light);
+        .language:hover {
+            border-color: var(--orange);
+            color: var(--orange);
         }
 
-        .request-btn {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            background: var(--gold);
-            color: var(--navy);
+        .request {
+            background: var(--orange);
+            color: white;
 
             padding: 11px 18px;
 
-            border-radius: 30px;
+            border-radius: 8px;
 
             font-size: 13px;
-            font-weight: 800;
+            font-weight: 700;
 
             transition: .3s ease;
         }
 
-        .request-btn span {
-            width: 25px;
-            height: 25px;
+        .request:hover {
+            background: var(--orange-dark);
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           FLOATING CONTACT BUTTONS
+        ========================= */
+
+        .contact-buttons {
+            position: fixed;
+
+            right: 24px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            z-index: 9998;
+        }
+
+        .contact-button {
+            width: 54px;
+            height: 54px;
 
             display: flex;
             align-items: center;
@@ -290,19 +234,39 @@
 
             border-radius: 50%;
 
-            background: var(--navy);
             color: white;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,.35);
+
+            transition: .3s ease;
         }
 
-        .request-btn:hover {
-            transform: translateY(-2px);
-            background: var(--gold-light);
+        .contact-button:hover {
+            transform: scale(1.1);
+        }
+
+        .contact-button svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .whatsapp {
+            background: var(--green);
+        }
+
+        .call {
+            background: var(--call);
+        }
+
+        .email {
+            background: var(--orange);
         }
 
 
-        /* =========================================
+        /* =========================
            HERO
-        ========================================= */
+        ========================= */
 
         .hero {
             min-height: 100vh;
@@ -312,16 +276,16 @@
             display: flex;
             align-items: center;
 
-            padding: 150px 7% 100px;
+            padding: 130px 8% 80px;
 
             overflow: hidden;
 
             background:
                 linear-gradient(
                     90deg,
-                    rgba(7,24,47,.97) 0%,
-                    rgba(7,24,47,.85) 48%,
-                    rgba(7,24,47,.65) 100%
+                    rgba(13,13,13,.97),
+                    rgba(13,13,13,.82),
+                    rgba(13,13,13,.65)
                 ),
                 url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2000&q=85");
 
@@ -329,78 +293,73 @@
             background-position: center;
         }
 
-        .hero::after {
+        .hero::before {
             content: "";
 
             position: absolute;
-            inset: 0;
+            width: 600px;
+            height: 600px;
 
-            background:
-                radial-gradient(
-                    circle at 70% 40%,
-                    rgba(216,173,82,.12),
-                    transparent 30%
-                );
+            right: -200px;
+            top: 15%;
 
-            pointer-events: none;
+            background: var(--orange);
+
+            opacity: .07;
+
+            filter: blur(100px);
+
+            border-radius: 50%;
         }
 
 
-        /* =========================================
-           WATERMARK
-        ========================================= */
+        /* WATERMARK */
 
-        .watermark {
+        .watermarks {
             position: absolute;
             inset: 0;
 
-            overflow: hidden;
-
             pointer-events: none;
-
-            z-index: 0;
+            overflow: hidden;
         }
 
-        .watermark span {
+        .watermarks span {
             position: absolute;
 
             color: rgba(255,255,255,.035);
 
-            font-size: clamp(80px, 11vw, 180px);
+            font-size: clamp(80px,10vw,170px);
 
             font-weight: 800;
 
             white-space: nowrap;
         }
 
-        .watermark .one {
+        .watermarks .one {
             top: 18%;
             right: -5%;
         }
 
-        .watermark .two {
-            bottom: 12%;
-            left: -8%;
+        .watermarks .two {
+            bottom: 10%;
+            left: -6%;
         }
 
-        .watermark .three {
-            top: 50%;
+        .watermarks .three {
+            top: 48%;
             left: 28%;
-
-            font-size: clamp(50px,7vw,110px);
+            font-size: clamp(45px,6vw,100px);
         }
 
 
-        /* =========================================
-           HERO CONTENT
-        ========================================= */
+        /* HERO CONTENT */
 
         .hero-content {
             position: relative;
             z-index: 2;
 
-            width: 100%;
             max-width: 1150px;
+            width: 100%;
 
             margin: auto;
         }
@@ -408,165 +367,125 @@
         .hero-grid {
             display: grid;
 
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.15fr .85fr;
 
             gap: 70px;
 
             align-items: center;
         }
 
-        .hero-copy {
-            max-width: 620px;
+        .hero-text {
+            max-width: 700px;
         }
 
         .eyebrow {
-            display: inline-flex;
-
-            align-items: center;
-            gap: 10px;
-
-            color: var(--gold-light);
+            color: var(--orange);
 
             font-size: 12px;
             font-weight: 800;
 
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
+            letter-spacing: 4px;
 
             margin-bottom: 20px;
         }
 
-        .eyebrow::before {
-            content: "";
-
-            width: 34px;
-            height: 2px;
-
-            background: var(--gold);
-        }
-
         .hero h1 {
-            color: white;
+            font-size: clamp(48px,6vw,82px);
 
-            font-size: clamp(46px,5.5vw,78px);
-
-            line-height: 1.02;
+            line-height: 1.03;
 
             letter-spacing: -3px;
 
-            font-weight: 800;
+            margin-bottom: 25px;
 
-            margin-bottom: 26px;
+            font-weight: 800;
         }
 
         .hero h1 span {
-            color: var(--gold);
+            color: var(--orange);
         }
 
         .hero-description {
-            color: rgba(255,255,255,.78);
+            color: #c3c3c3;
+
+            max-width: 600px;
 
             font-size: 17px;
 
             line-height: 1.9;
 
-            max-width: 580px;
-
-            margin-bottom: 34px;
+            margin-bottom: 32px;
         }
 
-        .hero-actions {
+        .hero-buttons {
             display: flex;
-
-            align-items: center;
-
-            gap: 14px;
-
+            gap: 12px;
             flex-wrap: wrap;
         }
 
-        .btn-primary,
-        .btn-outline {
+        .primary-button,
+        .secondary-button {
             display: inline-flex;
 
             align-items: center;
             justify-content: center;
 
-            min-width: 170px;
-
-            padding: 14px 24px;
+            padding: 14px 25px;
 
             border-radius: 8px;
 
             font-size: 14px;
-
-            font-weight: 800;
+            font-weight: 700;
 
             transition: .3s ease;
         }
 
-        .btn-primary {
-            background: var(--gold);
-            color: var(--navy);
-        }
-
-        .btn-primary:hover {
-            background: var(--gold-light);
-
-            transform: translateY(-3px);
-        }
-
-        .btn-outline {
-            border: 1px solid rgba(255,255,255,.25);
-
+        .primary-button {
+            background: var(--orange);
             color: white;
-
-            background: rgba(255,255,255,.03);
         }
 
-        .btn-outline:hover {
-            border-color: var(--gold);
+        .primary-button:hover {
+            background: var(--orange-dark);
+            transform: translateY(-3px);
+        }
 
-            color: var(--gold-light);
+        .secondary-button {
+            border: 1px solid rgba(255,255,255,.18);
+            color: white;
+        }
 
+        .secondary-button:hover {
+            border-color: var(--orange);
+            color: var(--orange);
             transform: translateY(-3px);
         }
 
 
-        /* =========================================
-           HERO SERVICE CARD
-        ========================================= */
+        /* HERO CARD */
 
         .hero-card {
-            position: relative;
+            background: rgba(255,255,255,.045);
 
-            width: 360px;
-
-            max-width: 100%;
-
-            margin-left: auto;
+            border: 1px solid rgba(255,122,0,.25);
 
             border-radius: 24px;
 
             overflow: hidden;
 
-            background: rgba(10,27,52,.75);
-
-            border: 1px solid rgba(216,173,82,.25);
-
-            box-shadow: 0 30px 80px rgba(0,0,0,.35);
+            box-shadow:
+                0 30px 80px rgba(0,0,0,.4);
 
             backdrop-filter: blur(12px);
         }
 
         .hero-card-image {
-            height: 260px;
+            height: 230px;
 
             background:
                 linear-gradient(
-                    rgba(7,24,47,.15),
-                    rgba(7,24,47,.75)
+                    rgba(0,0,0,.1),
+                    rgba(0,0,0,.7)
                 ),
                 url("https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=85");
 
@@ -574,157 +493,48 @@
             background-position: center;
         }
 
-        .hero-card-body {
-            padding: 25px;
+        .hero-card-content {
+            padding: 26px;
         }
 
-        .hero-card-tag {
-            color: var(--gold);
+        .hero-card-label {
+            color: var(--orange);
 
             font-size: 11px;
-
             font-weight: 800;
 
             letter-spacing: 2px;
-
-            text-transform: uppercase;
 
             margin-bottom: 10px;
         }
 
         .hero-card h3 {
-            color: white;
-
-            font-size: 25px;
-
+            font-size: 24px;
             margin-bottom: 10px;
         }
 
         .hero-card p {
-            color: rgba(255,255,255,.68);
+            color: #aaa;
 
             font-size: 13px;
 
-            line-height: 1.7;
-        }
-
-        .hero-card-bottom {
-            display: grid;
-
-            grid-template-columns: repeat(3,1fr);
-
-            border-top: 1px solid rgba(255,255,255,.08);
-
-            margin-top: 20px;
-        }
-
-        .hero-stat {
-            padding: 16px 10px;
-
-            text-align: center;
-
-            border-right: 1px solid rgba(255,255,255,.08);
-        }
-
-        .hero-stat:last-child {
-            border-right: 0;
-        }
-
-        .hero-stat strong {
-            display: block;
-
-            color: var(--gold);
-
-            font-size: 18px;
-        }
-
-        .hero-stat span {
-            display: block;
-
-            color: rgba(255,255,255,.55);
-
-            font-size: 10px;
-
-            margin-top: 4px;
+            line-height: 1.8;
         }
 
 
-        /* =========================================
-           FLOATING CONTACT BUTTONS
-        ========================================= */
-
-        .contact-float {
-            position: fixed;
-
-            right: 24px;
-            top: 50%;
-
-            transform: translateY(-50%);
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 14px;
-
-            z-index: 10000;
-        }
-
-        .contact-float a {
-            position: relative;
-
-            width: 58px;
-            height: 58px;
-
-            border-radius: 50%;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            box-shadow: 0 10px 30px rgba(0,0,0,.3);
-
-            transition: .3s ease;
-        }
-
-        .contact-float a:hover {
-            transform: scale(1.1);
-        }
-
-        .contact-float .whatsapp {
-            background: var(--green);
-        }
-
-        .contact-float .call {
-            background: var(--green-dark);
-        }
-
-        .contact-float .email {
-            background: var(--orange);
-        }
-
-        .contact-float svg {
-            width: 27px;
-            height: 27px;
-
-            fill: white;
-        }
-
-
-        /* =========================================
+        /* =========================
            SERVICES
-        ========================================= */
+        ========================= */
 
         .services {
             position: relative;
 
-            padding: 110px 6%;
+            padding: 110px 7%;
 
-            background: #f8f9fb;
+            background: var(--black-2);
         }
 
-        .section-title {
+        .section-heading {
             max-width: 700px;
 
             margin: 0 auto 60px;
@@ -733,7 +543,7 @@
         }
 
         .section-label {
-            color: var(--gold);
+            color: var(--orange);
 
             font-size: 12px;
 
@@ -741,29 +551,28 @@
 
             letter-spacing: 3px;
 
-            text-transform: uppercase;
-
             margin-bottom: 12px;
         }
 
-        .section-title h2 {
-            color: var(--navy);
-
-            font-size: clamp(34px,4vw,52px);
+        .section-heading h2 {
+            font-size: clamp(36px,4vw,55px);
 
             margin-bottom: 15px;
         }
 
-        .section-title p {
-            color: var(--muted);
-
-            font-size: 15px;
+        .section-heading p {
+            color: var(--gray);
 
             line-height: 1.8;
+
+            font-size: 15px;
         }
 
+
+        /* 3D SERVICE GRID */
+
         .services-grid {
-            max-width: 1250px;
+            max-width: 1200px;
 
             margin: auto;
 
@@ -771,27 +580,38 @@
 
             grid-template-columns: repeat(3,1fr);
 
-            gap: 22px;
+            gap: 25px;
         }
 
         .service-card {
             position: relative;
 
-            padding: 32px;
-
             min-height: 260px;
 
-            background: white;
+            padding: 32px;
 
-            border: 1px solid #e9edf2;
+            background:
+                linear-gradient(
+                    145deg,
+                    #222222,
+                    #111111
+                );
 
-            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,.08);
 
-            box-shadow: 0 12px 40px rgba(7,24,47,.06);
-
-            transition: .3s ease;
+            border-radius: 20px;
 
             overflow: hidden;
+
+            transform-style: preserve-3d;
+
+            box-shadow:
+                0 20px 40px rgba(0,0,0,.35);
+
+            transition:
+                transform .35s ease,
+                border-color .35s ease,
+                box-shadow .35s ease;
         }
 
         .service-card::before {
@@ -799,33 +619,36 @@
 
             position: absolute;
 
-            top: 0;
-            left: 0;
+            width: 160px;
+            height: 160px;
 
-            width: 100%;
-            height: 3px;
+            right: -70px;
+            top: -70px;
 
-            background: var(--gold);
+            background: var(--orange);
 
-            transform: scaleX(0);
+            opacity: .08;
 
-            transform-origin: left;
+            border-radius: 50%;
 
-            transition: .3s ease;
+            filter: blur(10px);
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
+            transform:
+                perspective(900px)
+                rotateX(3deg)
+                rotateY(-3deg)
+                translateY(-10px);
 
-            box-shadow: 0 25px 60px rgba(7,24,47,.12);
-        }
+            border-color: rgba(255,122,0,.45);
 
-        .service-card:hover::before {
-            transform: scaleX(1);
+            box-shadow:
+                0 30px 70px rgba(0,0,0,.5);
         }
 
         .service-number {
-            color: var(--gold);
+            color: var(--orange);
 
             font-size: 12px;
 
@@ -833,56 +656,66 @@
 
             letter-spacing: 2px;
 
-            margin-bottom: 25px;
+            margin-bottom: 28px;
+        }
+
+        .service-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 22px;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,122,0,.2),
+                    rgba(255,122,0,.03)
+                );
+
+            border: 1px solid rgba(255,122,0,.25);
+
+            color: var(--orange);
+
+            font-size: 22px;
+
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,.08),
+                0 10px 25px rgba(0,0,0,.25);
         }
 
         .service-card h3 {
-            color: var(--navy);
-
             font-size: 21px;
 
             margin-bottom: 12px;
         }
 
         .service-card p {
-            color: var(--muted);
+            color: #9f9f9f;
 
             font-size: 14px;
 
             line-height: 1.8;
         }
 
-        .service-card a {
-            display: inline-flex;
 
-            margin-top: 20px;
-
-            color: var(--navy);
-
-            font-size: 13px;
-
-            font-weight: 800;
-        }
-
-        .service-card a:hover {
-            color: var(--gold);
-        }
-
-
-        /* =========================================
+        /* =========================
            STATS
-        ========================================= */
+        ========================= */
 
         .stats {
             padding: 55px 7%;
 
-            background: var(--navy);
-
-            color: white;
+            background: var(--orange);
         }
 
         .stats-grid {
-            max-width: 1200px;
+            max-width: 1100px;
 
             margin: auto;
 
@@ -894,9 +727,9 @@
         .stat {
             text-align: center;
 
-            padding: 10px 20px;
+            border-right: 1px solid rgba(0,0,0,.15);
 
-            border-right: 1px solid rgba(255,255,255,.12);
+            padding: 10px;
         }
 
         .stat:last-child {
@@ -906,7 +739,7 @@
         .stat strong {
             display: block;
 
-            color: var(--gold);
+            color: var(--black);
 
             font-size: 38px;
 
@@ -914,20 +747,22 @@
         }
 
         .stat span {
-            color: rgba(255,255,255,.7);
+            color: rgba(0,0,0,.65);
 
             font-size: 13px;
         }
 
 
-        /* =========================================
+        /* =========================
            PARTNERS
-        ========================================= */
+        ========================= */
 
         .partners {
-            padding: 90px 6%;
+            padding: 90px 0;
 
-            background: white;
+            background: #f5f5f5;
+
+            color: var(--black);
 
             overflow: hidden;
         }
@@ -935,17 +770,17 @@
         .partners-heading {
             text-align: center;
 
-            margin-bottom: 45px;
+            margin-bottom: 40px;
+
+            padding: 0 20px;
         }
 
         .partners-heading h2 {
-            color: var(--navy);
-
-            font-size: 36px;
+            font-size: 40px;
         }
 
         .partners-heading p {
-            color: var(--muted);
+            color: #777;
 
             margin-top: 10px;
         }
@@ -955,39 +790,33 @@
 
             width: max-content;
 
-            animation: partnersMove 25s linear infinite;
+            animation: movePartners 25s linear infinite;
         }
 
-        .partner-item {
-            min-width: 190px;
-
+        .partner {
+            width: 190px;
             height: 85px;
 
             margin: 0 10px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
-            border: 1px solid #e7eaf0;
+            background: white;
 
-            border-radius: 14px;
+            border: 1px solid #ddd;
 
-            background: #fafbfc;
+            border-radius: 15px;
 
-            color: #657084;
-
-            font-size: 20px;
+            font-size: 19px;
 
             font-weight: 800;
+
+            color: #777;
         }
 
-        .partner-item span {
-            color: var(--navy);
-        }
-
-        @keyframes partnersMove {
+        @keyframes movePartners {
             from {
                 transform: translateX(0);
             }
@@ -998,21 +827,15 @@
         }
 
 
-        /* =========================================
+        /* =========================
            ABOUT
-        ========================================= */
+        ========================= */
 
         .about {
-            padding: 110px 7%;
+            padding: 110px 8%;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--navy),
-                    var(--navy-2)
-                );
+            background: var(--black);
 
-            color: white;
         }
 
         .about-grid {
@@ -1029,99 +852,101 @@
             align-items: center;
         }
 
-        .about-label {
-            color: var(--gold);
-
-            font-size: 12px;
-
-            font-weight: 800;
-
-            letter-spacing: 3px;
-
-            margin-bottom: 15px;
-        }
-
         .about h2 {
-            font-size: clamp(34px,4vw,52px);
+            font-size: clamp(36px,4vw,55px);
+
+            line-height: 1.1;
 
             margin-bottom: 22px;
         }
 
-        .about p {
-            color: rgba(255,255,255,.7);
+        .about h2 span {
+            color: var(--orange);
+        }
 
-            font-size: 15px;
+        .about p {
+            color: #999;
 
             line-height: 1.9;
 
-            margin-bottom: 18px;
+            font-size: 15px;
+
+            margin-bottom: 15px;
         }
 
         .about-box {
-            padding: 45px;
+            padding: 50px;
 
-            border: 1px solid rgba(216,173,82,.25);
+            border-radius: 25px;
 
-            border-radius: 22px;
+            background:
+                linear-gradient(
+                    145deg,
+                    #202020,
+                    #111111
+                );
 
-            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,122,0,.2);
 
-            backdrop-filter: blur(10px);
+            box-shadow: 0 25px 70px rgba(0,0,0,.4);
         }
 
         .about-box strong {
             display: block;
 
-            color: var(--gold);
+            color: var(--orange);
 
-            font-size: 45px;
+            font-size: 80px;
 
-            margin-bottom: 10px;
+            line-height: 1;
+
+            margin-bottom: 20px;
         }
 
-        .about-box span {
-            color: rgba(255,255,255,.7);
-
-            line-height: 1.8;
+        .about-box p {
+            margin: 0;
         }
 
 
-        /* =========================================
+        /* =========================
            CONTACT
-        ========================================= */
+        ========================= */
 
         .contact {
             padding: 100px 7%;
 
-            background: #f8f9fb;
+            background: var(--black-2);
         }
 
         .contact-box {
-            max-width: 1100px;
+            max-width: 1000px;
 
             margin: auto;
 
-            padding: 60px;
+            padding: 70px 40px;
+
+            text-align: center;
 
             border-radius: 25px;
 
-            background: white;
+            background:
+                linear-gradient(
+                    145deg,
+                    #202020,
+                    #121212
+                );
 
-            box-shadow: var(--shadow);
-
-            text-align: center;
+            border: 1px solid rgba(255,122,0,.2);
         }
 
         .contact-box h2 {
-            color: var(--navy);
-
-            font-size: 42px;
+            font-size: 45px;
 
             margin-bottom: 15px;
         }
 
         .contact-box p {
-            color: var(--muted);
+            color: #999;
 
             max-width: 650px;
 
@@ -1137,187 +962,152 @@
 
             justify-content: center;
 
-            gap: 14px;
-
-            flex-wrap: wrap;
+            gap: 12px;
         }
 
 
-        /* =========================================
+        /* =========================
            FOOTER
-        ========================================= */
+        ========================= */
 
         footer {
-            background: #06152a;
+            padding: 60px 7% 25px;
 
-            color: white;
+            background: #080808;
 
-            padding: 65px 7% 25px;
+            border-top: 1px solid rgba(255,255,255,.06);
         }
 
         .footer-grid {
-            max-width: 1200px;
+            max-width: 1150px;
 
             margin: auto;
 
             display: grid;
 
-            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
 
-            gap: 50px;
+            gap: 45px;
         }
 
-        .footer-brand strong {
-            display: block;
-
-            color: var(--gold);
+        .footer-logo {
+            color: var(--orange);
 
             font-size: 34px;
+
+            font-weight: 800;
 
             margin-bottom: 12px;
         }
 
-        .footer-brand p {
-            color: rgba(255,255,255,.55);
-
-            font-size: 13px;
-
-            line-height: 1.8;
-
-            max-width: 280px;
-        }
-
-        footer h4 {
-            margin-bottom: 20px;
+        .footer-column h4 {
+            margin-bottom: 18px;
 
             font-size: 14px;
         }
 
-        footer ul {
-            list-style: none;
-        }
-
-        footer li {
-            margin-bottom: 11px;
-        }
-
-        footer li a {
-            color: rgba(255,255,255,.55);
+        .footer-column p,
+        .footer-column a {
+            color: #777;
 
             font-size: 13px;
+
+            line-height: 2;
+
+            display: block;
 
             transition: .3s ease;
         }
 
-        footer li a:hover {
-            color: var(--gold);
-        }
-
-        .footer-contact p {
-            color: rgba(255,255,255,.6);
-
-            font-size: 13px;
-
-            margin-bottom: 12px;
+        .footer-column a:hover {
+            color: var(--orange);
         }
 
         .footer-bottom {
-            max-width: 1200px;
+            max-width: 1150px;
 
-            margin: 50px auto 0;
+            margin: 45px auto 0;
 
-            padding-top: 22px;
+            padding-top: 20px;
 
-            border-top: 1px solid rgba(255,255,255,.08);
+            border-top: 1px solid rgba(255,255,255,.07);
+
+            color: #555;
+
+            font-size: 11px;
 
             display: flex;
 
             justify-content: space-between;
-
-            color: rgba(255,255,255,.4);
-
-            font-size: 11px;
         }
 
 
-        /* =========================================
-           ARABIC
-        ========================================= */
+        /* =========================
+           ARABIC RTL
+        ========================= */
 
-        body.arabic .hero {
+        body.ar {
             direction: rtl;
         }
 
-        body.arabic .hero-grid {
+        body.ar .hero,
+        body.ar .services,
+        body.ar .about,
+        body.ar .contact,
+        body.ar footer {
             direction: rtl;
         }
 
-        body.arabic .hero-copy {
+        body.ar .hero-grid {
+            direction: rtl;
+        }
+
+        body.ar .hero-text {
             text-align: right;
         }
 
-        body.arabic .hero-actions {
+        body.ar .hero-buttons {
             justify-content: flex-start;
         }
 
-        body.arabic .hero-card {
-            margin-left: 0;
-            margin-right: auto;
-        }
-
-        body.arabic .eyebrow::before {
-            order: 2;
-        }
-
-        body.arabic .services,
-        body.arabic .about,
-        body.arabic .contact,
-        body.arabic footer {
-            direction: rtl;
-        }
-
-        body.arabic .contact-float {
+        body.ar .contact-buttons {
             right: auto;
             left: 24px;
         }
 
 
-        /* =========================================
+        /* =========================
            MOBILE
-        ========================================= */
+        ========================= */
 
         @media (max-width: 1100px) {
 
-            .nav {
-                gap: 18px;
-            }
-
-            .header-right {
-                min-width: auto;
-            }
-
-            .brand {
-                min-width: auto;
-            }
-
-            .brand-text {
-                display: none;
+            nav {
+                gap: 20px;
             }
 
             .hero-grid {
                 grid-template-columns: 1fr;
             }
 
-            .hero-copy {
+            .hero-text {
+                max-width: 750px;
                 margin: auto;
                 text-align: center;
             }
 
-            .hero-actions {
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
                 justify-content: center;
             }
 
             .hero-card {
+                max-width: 450px;
+                width: 100%;
                 margin: auto;
             }
 
@@ -1329,6 +1119,11 @@
                 grid-template-columns: 1fr;
             }
 
+            .about-box {
+                max-width: 600px;
+                margin: auto;
+            }
+
             .footer-grid {
                 grid-template-columns: repeat(2,1fr);
             }
@@ -1337,38 +1132,34 @@
 
         @media (max-width: 750px) {
 
-            .header {
-                height: 74px;
+            header {
+                height: 72px;
                 padding: 0 20px;
             }
 
-            .nav {
+            .logo-name {
                 display: none;
             }
 
-            .header-right {
-                gap: 6px;
+            nav {
+                display: none;
             }
 
-            .request-btn {
-                padding: 9px 12px;
+            .request {
+                display: none;
             }
 
             .hero {
-                padding: 130px 20px 80px;
+                padding: 120px 20px 70px;
             }
 
             .hero h1 {
-                font-size: 48px;
+                font-size: 47px;
                 letter-spacing: -2px;
             }
 
             .hero-description {
                 font-size: 15px;
-            }
-
-            .hero-card {
-                width: 100%;
             }
 
             .services {
@@ -1379,39 +1170,29 @@
                 grid-template-columns: 1fr;
             }
 
-            .stats {
-                padding: 40px 20px;
-            }
-
             .stats-grid {
                 grid-template-columns: repeat(2,1fr);
                 gap: 25px;
             }
 
             .stat {
-                border-right: 0;
+                border: 0;
             }
 
-            .stat strong {
-                font-size: 30px;
+            .about {
+                padding: 80px 20px;
             }
 
-            .contact-float {
-                right: 15px;
-            }
-
-            body.arabic .contact-float {
-                right: auto;
-                left: 15px;
-            }
-
-            .contact-float a {
-                width: 50px;
-                height: 50px;
+            .contact {
+                padding: 70px 20px;
             }
 
             .contact-box {
-                padding: 35px 20px;
+                padding: 50px 20px;
+            }
+
+            .contact-box h2 {
+                font-size: 34px;
             }
 
             .footer-grid {
@@ -1422,6 +1203,20 @@
                 flex-direction: column;
                 gap: 10px;
             }
+
+            .contact-buttons {
+                right: 14px;
+            }
+
+            body.ar .contact-buttons {
+                right: auto;
+                left: 14px;
+            }
+
+            .contact-button {
+                width: 48px;
+                height: 48px;
+            }
         }
 
     </style>
@@ -1430,71 +1225,70 @@
 
 <body>
 
-    <!-- =========================================
+    <!-- =========================
          HEADER
-    ========================================== -->
+    ========================== -->
 
-    <header class="header" id="header">
+    <header id="header">
 
-        <a href="#home" class="brand">
+        <a href="#home" class="logo">
 
-            <div class="brand-mark">
-                <span>8N</span>
+            <div class="logo-mark">
+                8N
             </div>
 
-            <div class="brand-text">
-                <strong>8N</strong>
-                <small>ALRAQAM ALTHAMIN</small>
+            <div class="logo-name">
+                ALRAQAM ALTHAMIN
             </div>
 
         </a>
 
 
-        <nav class="nav">
+        <nav>
 
-            <a href="#home" data-en="Home" data-ar="الرئيسية">
+            <a href="#home"
+               data-en="Home"
+               data-ar="الرئيسية">
                 Home
             </a>
 
-            <a href="#services" data-en="Services" data-ar="الخدمات">
+            <a href="#services"
+               data-en="Services"
+               data-ar="الخدمات">
                 Services
             </a>
 
-            <a href="#about" data-en="About" data-ar="من نحن">
+            <a href="#about"
+               data-en="About"
+               data-ar="من نحن">
                 About
             </a>
 
-            <a href="#contact" data-en="Contact" data-ar="تواصل معنا">
+            <a href="#contact"
+               data-en="Contact"
+               data-ar="تواصل معنا">
                 Contact
             </a>
 
         </nav>
 
 
-        <div class="header-right">
+        <div class="header-actions">
 
             <button
-                class="language-btn"
-                id="languageBtn"
-                onclick="toggleLanguage()"
-            >
+                class="language"
+                id="languageButton"
+                onclick="toggleLanguage()">
                 عربي
             </button>
 
             <a
                 href="https://wa.me/966534410774"
                 target="_blank"
-                class="request-btn"
-            >
-                <span>→</span>
-
-                <span
-                    class="request-text"
-                    data-en="Request Help"
-                    data-ar="اطلب المساعدة"
-                >
-                    Request Help
-                </span>
+                class="request"
+                data-en="Request Help"
+                data-ar="اطلب المساعدة">
+                Request Help
             </a>
 
         </div>
@@ -1502,20 +1296,18 @@
     </header>
 
 
-    <!-- =========================================
-         FLOATING CONTACT
-    ========================================== -->
+    <!-- =========================
+         CONTACT BUTTONS
+    ========================== -->
 
-    <div class="contact-float">
+    <div class="contact-buttons">
 
         <!-- WhatsApp -->
 
         <a
             href="https://wa.me/966534410774"
             target="_blank"
-            class="whatsapp"
-            aria-label="WhatsApp"
-        >
+            class="contact-button whatsapp">
 
             <svg viewBox="0 0 24 24">
                 <path d="M20.5 3.5A11.8 11.8 0 0 0 12.08 0C5.57 0 .27 5.3.27 11.81c0 2.08.54 4.1 1.57 5.89L.17 24l6.44-1.63a11.76 11.76 0 0 0 5.47 1.35h.01c6.51 0 11.81-5.3 11.81-11.81 0-3.16-1.23-6.13-3.4-8.41ZM12.09 21.7h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.82.97 1.02-3.72-.24-.38a9.83 9.83 0 1 1 8.44 4.72Zm5.4-7.37c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.59-.49-.51-.67-.52h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.5 1.71.64.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.12-.27-.2-.57-.35Z"/>
@@ -1528,9 +1320,7 @@
 
         <a
             href="tel:+966534410774"
-            class="call"
-            aria-label="Call"
-        >
+            class="contact-button call">
 
             <svg viewBox="0 0 24 24">
                 <path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.56 3.57.56.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.19 2.45.56 3.57.11.35.03.74-.25 1.02l-2.19 2.2Z"/>
@@ -1543,9 +1333,7 @@
 
         <a
             href="mailto:hassan@8n.sa"
-            class="email"
-            aria-label="Email"
-        >
+            class="contact-button email">
 
             <svg viewBox="0 0 24 24">
                 <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/>
@@ -1556,19 +1344,25 @@
     </div>
 
 
-    <!-- =========================================
+    <!-- =========================
          HERO
-    ========================================== -->
+    ========================== -->
 
     <section class="hero" id="home">
 
-        <div class="watermark">
+        <div class="watermarks">
 
-            <span class="one">الأمن السيبراني</span>
+            <span class="one">
+                الأمن السيبراني
+            </span>
 
-            <span class="two">تسجيل الموردين</span>
+            <span class="two">
+                تسجيل الموردين
+            </span>
 
-            <span class="three">حلول الأعمال</span>
+            <span class="three">
+                حلول رقمية
+            </span>
 
         </div>
 
@@ -1578,58 +1372,53 @@
             <div class="hero-grid">
 
 
-                <!-- LEFT -->
+                <div class="hero-text">
 
-                <div class="hero-copy">
-
-                    <div class="eyebrow">
-                        8N COMPANY
+                    <div
+                        class="eyebrow"
+                        data-en="DIGITAL BUSINESS SOLUTIONS"
+                        data-ar="حلول الأعمال الرقمية">
+                        DIGITAL BUSINESS SOLUTIONS
                     </div>
 
 
-                    <h1>
+                    <h1
+                        data-en-title="Your trusted partner in"
+                        data-ar-title="شريكك الموثوق في">
 
-                        Your Trusted Partner in
-                        <span>Digital Solutions</span>
-                        & Business Growth
+                        Build.
+                        <span>Secure.</span>
+                        Grow.
 
                     </h1>
 
 
                     <p
                         class="hero-description"
-                        data-en="We provide integrated business solutions that help companies grow, comply, and operate with confidence across Saudi Arabia."
-                        data-ar="نقدم حلول أعمال متكاملة تساعد الشركات على النمو والامتثال والعمل بثقة في المملكة العربية السعودية."
-                    >
-                        We provide integrated business solutions that help companies grow, comply, and operate with confidence across Saudi Arabia.
+                        data-en="Digital solutions, cybersecurity, vendor registration and business services designed for modern Saudi companies."
+                        data-ar="حلول رقمية وأمن سيبراني وتسجيل موردين وخدمات أعمال مصممة للشركات السعودية الحديثة.">
+
+                        Digital solutions, cybersecurity, vendor registration and business services designed for modern Saudi companies.
+
                     </p>
 
 
-                    <div class="hero-actions">
+                    <div class="hero-buttons">
 
                         <a
                             href="#services"
-                            class="btn-primary"
-                        >
-                            <span
-                                data-en="Explore Services"
-                                data-ar="استكشف خدماتنا"
-                            >
-                                Explore Services
-                            </span>
+                            class="primary-button"
+                            data-en="Explore Services"
+                            data-ar="استكشف الخدمات">
+                            Explore Services
                         </a>
-
 
                         <a
                             href="#contact"
-                            class="btn-outline"
-                        >
-                            <span
-                                data-en="Contact Us"
-                                data-ar="تواصل معنا"
-                            >
-                                Contact Us
-                            </span>
+                            class="secondary-button"
+                            data-en="Contact Us"
+                            data-ar="تواصل معنا">
+                            Contact Us
                         </a>
 
                     </div>
@@ -1637,66 +1426,29 @@
                 </div>
 
 
-                <!-- RIGHT SERVICE CARD -->
-
                 <div class="hero-card">
 
                     <div class="hero-card-image"></div>
 
-                    <div class="hero-card-body">
+                    <div class="hero-card-content">
 
-                        <div class="hero-card-tag">
+                        <div class="hero-card-label">
                             8N SOLUTIONS
                         </div>
 
                         <h3
                             data-en="Cybersecurity & Compliance"
-                            data-ar="الأمن السيبراني والامتثال"
-                        >
+                            data-ar="الأمن السيبراني والامتثال">
                             Cybersecurity & Compliance
                         </h3>
 
                         <p
-                            data-en="Security, compliance and digital solutions designed to protect and strengthen your business."
-                            data-ar="حلول الأمن السيبراني والامتثال والحلول الرقمية لحماية أعمالك وتعزيزها."
-                        >
-                            Security, compliance and digital solutions designed to protect and strengthen your business.
+                            data-en="Protect your business, strengthen compliance and build a stronger digital foundation."
+                            data-ar="احمِ أعمالك، عزز الامتثال، وابنِ أساسًا رقميًا أقوى.">
+
+                            Protect your business, strengthen compliance and build a stronger digital foundation.
+
                         </p>
-
-
-                        <div class="hero-card-bottom">
-
-                            <div class="hero-stat">
-                                <strong>24/7</strong>
-                                <span
-                                    data-en="Support"
-                                    data-ar="دعم"
-                                >
-                                    Support
-                                </span>
-                            </div>
-
-                            <div class="hero-stat">
-                                <strong>10+</strong>
-                                <span
-                                    data-en="Services"
-                                    data-ar="خدمات"
-                                >
-                                    Services
-                                </span>
-                            </div>
-
-                            <div class="hero-stat">
-                                <strong>8N</strong>
-                                <span
-                                    data-en="Solutions"
-                                    data-ar="حلول"
-                                >
-                                    Solutions
-                                </span>
-                            </div>
-
-                        </div>
 
                     </div>
 
@@ -1709,13 +1461,13 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =========================
          SERVICES
-    ========================================== -->
+    ========================== -->
 
     <section class="services" id="services">
 
-        <div class="section-title">
+        <div class="section-heading">
 
             <div class="section-label">
                 8N SERVICES
@@ -1723,16 +1475,16 @@
 
             <h2
                 data-en="Our Services"
-                data-ar="خدماتنا"
-            >
+                data-ar="خدماتنا">
                 Our Services
             </h2>
 
             <p
-                data-en="Integrated solutions designed to support your business at every stage."
-                data-ar="حلول متكاملة مصممة لدعم أعمالك في كل مرحلة."
-            >
-                Integrated solutions designed to support your business at every stage.
+                data-en="Integrated solutions that help your business establish, secure and grow."
+                data-ar="حلول متكاملة تساعد أعمالك على التأسيس والحماية والنمو.">
+
+                Integrated solutions that help your business establish, secure and grow.
+
             </p>
 
         </div>
@@ -1745,23 +1497,21 @@
 
                 <div class="service-number">01</div>
 
+                <div class="service-icon">◈</div>
+
                 <h3
                     data-en="Domain & Hosting"
-                    data-ar="الدومين والاستضافة"
-                >
+                    data-ar="الدومين والاستضافة">
                     Domain & Hosting
                 </h3>
 
                 <p
-                    data-en="Domain registration, hosting solutions, DNS configuration and professional business email."
-                    data-ar="تسجيل النطاقات، حلول الاستضافة، إعدادات DNS والبريد الإلكتروني الاحترافي."
-                >
-                    Domain registration, hosting solutions, DNS configuration and professional business email.
-                </p>
+                    data-en="Domain registration, hosting, DNS and professional business email solutions."
+                    data-ar="تسجيل النطاقات والاستضافة وإعداد DNS وحلول البريد الإلكتروني الاحترافي.">
 
-                <a href="#contact">
-                    Learn More →
-                </a>
+                    Domain registration, hosting, DNS and professional business email solutions.
+
+                </p>
 
             </div>
 
@@ -1770,23 +1520,21 @@
 
                 <div class="service-number">02</div>
 
+                <div class="service-icon">M</div>
+
                 <h3
                     data-en="Microsoft 365"
-                    data-ar="مايكروسوفت 365"
-                >
+                    data-ar="مايكروسوفت 365">
                     Microsoft 365
                 </h3>
 
                 <p
-                    data-en="Microsoft 365 setup, administration, business email and secure collaboration solutions."
-                    data-ar="إعداد وإدارة Microsoft 365 والبريد الإلكتروني وحلول التعاون الآمنة."
-                >
-                    Microsoft 365 setup, administration, business email and secure collaboration solutions.
-                </p>
+                    data-en="Microsoft 365 setup, administration, email and secure collaboration."
+                    data-ar="إعداد وإدارة Microsoft 365 والبريد الإلكتروني والتعاون الآمن.">
 
-                <a href="#contact">
-                    Learn More →
-                </a>
+                    Microsoft 365 setup, administration, email and secure collaboration.
+
+                </p>
 
             </div>
 
@@ -1795,23 +1543,21 @@
 
                 <div class="service-number">03</div>
 
+                <div class="service-icon">⌘</div>
+
                 <h3
                     data-en="Web Design & Development"
-                    data-ar="تصميم وتطوير المواقع"
-                >
+                    data-ar="تصميم وتطوير المواقع">
                     Web Design & Development
                 </h3>
 
                 <p
-                    data-en="Modern, responsive websites and digital experiences designed around your business."
-                    data-ar="مواقع حديثة ومتجاوبة وتجارب رقمية مصممة وفق احتياجات أعمالك."
-                >
-                    Modern, responsive websites and digital experiences designed around your business.
-                </p>
+                    data-en="Modern responsive websites designed around your brand and business goals."
+                    data-ar="مواقع حديثة ومتجاوبة مصممة حول هويتك وأهداف أعمالك.">
 
-                <a href="#contact">
-                    Learn More →
-                </a>
+                    Modern responsive websites designed around your brand and business goals.
+
+                </p>
 
             </div>
 
@@ -1820,23 +1566,21 @@
 
                 <div class="service-number">04</div>
 
+                <div class="service-icon">⌁</div>
+
                 <h3
                     data-en="Cybersecurity & Compliance"
-                    data-ar="الأمن السيبراني والامتثال"
-                >
+                    data-ar="الأمن السيبراني والامتثال">
                     Cybersecurity & Compliance
                 </h3>
 
                 <p
-                    data-en="Cybersecurity services, policies, risk assessment and compliance support."
-                    data-ar="خدمات الأمن السيبراني والسياسات وتقييم المخاطر ودعم الامتثال."
-                >
-                    Cybersecurity services, policies, risk assessment and compliance support.
-                </p>
+                    data-en="Security policies, risk assessment, compliance and cybersecurity support."
+                    data-ar="سياسات أمنية وتقييم مخاطر وامتثال ودعم في الأمن السيبراني.">
 
-                <a href="#contact">
-                    Learn More →
-                </a>
+                    Security policies, risk assessment, compliance and cybersecurity support.
+
+                </p>
 
             </div>
 
@@ -1845,23 +1589,21 @@
 
                 <div class="service-number">05</div>
 
+                <div class="service-icon">✓</div>
+
                 <h3
                     data-en="Vendor Registration"
-                    data-ar="تسجيل الموردين"
-                >
+                    data-ar="تسجيل الموردين">
                     Vendor Registration
                 </h3>
 
                 <p
-                    data-en="Vendor registration support for major Saudi platforms and procurement portals."
-                    data-ar="دعم تسجيل الموردين في أبرز المنصات وبوابات المشتريات في المملكة."
-                >
-                    Vendor registration support for major Saudi platforms and procurement portals.
-                </p>
+                    data-en="Support with supplier registration across major Saudi procurement platforms."
+                    data-ar="دعم تسجيل الموردين في أبرز منصات وبوابات المشتريات السعودية.">
 
-                <a href="#contact">
-                    Learn More →
-                </a>
+                    Support with supplier registration across major Saudi procurement platforms.
+
+                </p>
 
             </div>
 
@@ -1870,23 +1612,21 @@
 
                 <div class="service-number">06</div>
 
+                <div class="service-icon">ISO</div>
+
                 <h3
                     data-en="ISO Certificates"
-                    data-ar="شهادات ISO"
-                >
+                    data-ar="شهادات ISO">
                     ISO Certificates
                 </h3>
 
                 <p
-                    data-en="ISO consulting and certification support to improve quality, compliance and business standards."
-                    data-ar="استشارات ودعم شهادات ISO لتحسين الجودة والامتثال ومعايير الأعمال."
-                >
-                    ISO consulting and certification support to improve quality, compliance and business standards.
-                </p>
+                    data-en="Consulting and support for ISO certification and business compliance."
+                    data-ar="استشارات ودعم للحصول على شهادات ISO والامتثال المؤسسي.">
 
-                <a href="#contact">
-                    Learn More →
-                </a>
+                    Consulting and support for ISO certification and business compliance.
+
+                </p>
 
             </div>
 
@@ -1895,67 +1635,48 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =========================
          STATS
-    ========================================== -->
+    ========================== -->
 
     <section class="stats">
 
         <div class="stats-grid">
 
             <div class="stat">
-
                 <strong>200+</strong>
-
                 <span
-                    data-en="Business Clients"
-                    data-ar="عميل أعمال"
-                >
-                    Business Clients
+                    data-en="Businesses"
+                    data-ar="شركة">
+                    Businesses
                 </span>
-
             </div>
 
-
             <div class="stat">
-
                 <strong>500+</strong>
-
                 <span
-                    data-en="Projects Completed"
-                    data-ar="مشروع مكتمل"
-                >
-                    Projects Completed
+                    data-en="Projects"
+                    data-ar="مشروع">
+                    Projects
                 </span>
-
             </div>
 
-
             <div class="stat">
-
                 <strong>6+</strong>
-
                 <span
-                    data-en="Core Services"
-                    data-ar="خدمات أساسية"
-                >
-                    Core Services
+                    data-en="Services"
+                    data-ar="خدمات">
+                    Services
                 </span>
-
             </div>
 
-
             <div class="stat">
-
-                <strong>100%</strong>
-
+                <strong>8N</strong>
                 <span
-                    data-en="Commitment"
-                    data-ar="التزام"
-                >
-                    Commitment
+                    data-en="Solutions"
+                    data-ar="حلول">
+                    Solutions
                 </span>
-
             </div>
 
         </div>
@@ -1963,9 +1684,9 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =========================
          PARTNERS
-    ========================================== -->
+    ========================== -->
 
     <section class="partners">
 
@@ -1977,16 +1698,16 @@
 
             <h2
                 data-en="Strategic Partners"
-                data-ar="شركاؤنا الاستراتيجيون"
-            >
+                data-ar="شركاؤنا الاستراتيجيون">
                 Strategic Partners
             </h2>
 
             <p
-                data-en="Platforms and organizations we support businesses with."
-                data-ar="المنصات والجهات التي ندعم الشركات في التعامل معها."
-            >
-                Platforms and organizations we support businesses with.
+                data-en="Organizations and platforms relevant to our vendor registration services."
+                data-ar="الجهات والمنصات المرتبطة بخدمات تسجيل الموردين لدينا.">
+
+                Organizations and platforms relevant to our vendor registration services.
+
             </p>
 
         </div>
@@ -1996,64 +1717,19 @@
 
             <div class="partner-track">
 
-                <div class="partner-item">
-                    <span>ARAMCO</span>
-                </div>
+                <div class="partner">ARAMCO</div>
+                <div class="partner">SABIC</div>
+                <div class="partner">SEC</div>
+                <div class="partner">MAADEN</div>
+                <div class="partner">NEOM</div>
+                <div class="partner">RED SEA</div>
 
-                <div class="partner-item">
-                    <span>SABIC</span>
-                </div>
-
-                <div class="partner-item">
-                    <span>SEC</span>
-                </div>
-
-                <div class="partner-item">
-                    <span>MAADEN</span>
-                </div>
-
-                <div class="partner-item">
-                    <span>NEOM</span>
-                </div>
-
-                <div class="partner-item">
-                    <span>Red Sea</span>
-                </div>
-
-                <div class="partner-item">
-                    <span>Microsoft</span>
-                </div>
-
-
-                <!-- duplicate for animation -->
-
-                <div class="partner-item">
-                    <span>ARAMCO</span>
-                </div>
-
-                <div class="partner-item">
-                    <span>SABIC</span>
-                </div>
-
-                <div class="partner-item">
-                    <span>SEC</span>
-                </div>
-
-                <div class="partner-item">
-                    <span>MAADEN</span>
-                </div>
-
-                <div class="partner-item">
-                    <span>NEOM</span>
-                </div>
-
-                <div class="partner-item">
-                    <span>Red Sea</span>
-                </div>
-
-                <div class="partner-item">
-                    <span>Microsoft</span>
-                </div>
+                <div class="partner">ARAMCO</div>
+                <div class="partner">SABIC</div>
+                <div class="partner">SEC</div>
+                <div class="partner">MAADEN</div>
+                <div class="partner">NEOM</div>
+                <div class="partner">RED SEA</div>
 
             </div>
 
@@ -2062,9 +1738,9 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =========================
          ABOUT
-    ========================================== -->
+    ========================== -->
 
     <section class="about" id="about">
 
@@ -2072,29 +1748,30 @@
 
             <div>
 
-                <div class="about-label">
+                <div class="section-label">
                     ABOUT 8N
                 </div>
 
                 <h2
-                    data-en="Built to help Saudi businesses move forward."
-                    data-ar="صممنا لمساعدة الشركات السعودية على التقدم."
-                >
-                    Built to help Saudi businesses move forward.
+                    data-en="We make business easier."
+                    data-ar="نجعل أعمالك أسهل.">
+                    We make business easier.
                 </h2>
 
                 <p
-                    data-en="8N provides practical digital and business solutions that help companies establish their digital presence, meet compliance requirements and connect with major procurement ecosystems."
-                    data-ar="تقدم 8N حلولاً رقمية وعملية تساعد الشركات على بناء حضورها الرقمي وتحقيق متطلبات الامتثال والوصول إلى منظومات المشتريات الكبرى."
-                >
-                    8N provides practical digital and business solutions that help companies establish their digital presence, meet compliance requirements and connect with major procurement ecosystems.
+                    data-en="8N provides practical digital and business solutions for companies looking to establish, secure and grow their operations."
+                    data-ar="تقدم 8N حلولًا رقمية وعملية للشركات التي تسعى إلى تأسيس أعمالها وحمايتها وتنميتها.">
+
+                    8N provides practical digital and business solutions for companies looking to establish, secure and grow their operations.
+
                 </p>
 
                 <p
-                    data-en="Our goal is simple: make complex business requirements easier to understand, implement and manage."
-                    data-ar="هدفنا بسيط: جعل متطلبات الأعمال المعقدة أسهل في الفهم والتنفيذ والإدارة."
-                >
-                    Our goal is simple: make complex business requirements easier to understand, implement and manage.
+                    data-en="Our focus is simple: professional service, practical solutions and long-term business value."
+                    data-ar="تركيزنا بسيط: خدمة احترافية، حلول عملية، وقيمة طويلة المدى للأعمال.">
+
+                    Our focus is simple: professional service, practical solutions and long-term business value.
+
                 </p>
 
             </div>
@@ -2104,12 +1781,13 @@
 
                 <strong>8N</strong>
 
-                <span
-                    data-en="Digital solutions. Business growth. Cybersecurity. Compliance."
-                    data-ar="حلول رقمية. نمو الأعمال. أمن سيبراني. امتثال."
-                >
-                    Digital solutions. Business growth. Cybersecurity. Compliance.
-                </span>
+                <p
+                    data-en="Digital solutions • Cybersecurity • Compliance • Vendor Registration • Business Growth"
+                    data-ar="حلول رقمية • أمن سيبراني • امتثال • تسجيل موردين • نمو الأعمال">
+
+                    Digital solutions • Cybersecurity • Compliance • Vendor Registration • Business Growth
+
+                </p>
 
             </div>
 
@@ -2118,47 +1796,51 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =========================
          CONTACT
-    ========================================== -->
+    ========================== -->
 
     <section class="contact" id="contact">
 
         <div class="contact-box">
 
             <div class="section-label">
-                GET IN TOUCH
+                GET STARTED
             </div>
 
             <h2
-                data-en="Ready to move forward?"
-                data-ar="جاهز للخطوة القادمة؟"
-            >
-                Ready to move forward?
+                data-en="Need help with your business?"
+                data-ar="تحتاج مساعدة في أعمالك؟">
+
+                Need help with your business?
+
             </h2>
 
             <p
-                data-en="Tell us what your business needs and our team will help you find the right solution."
-                data-ar="أخبرنا باحتياجات عملك وسيساعدك فريقنا في الوصول إلى الحل المناسب."
-            >
-                Tell us what your business needs and our team will help you find the right solution.
+                data-en="Tell us what you need and we'll help you find the right solution."
+                data-ar="أخبرنا بما تحتاجه وسنساعدك في الوصول إلى الحل المناسب.">
+
+                Tell us what you need and we'll help you find the right solution.
+
             </p>
 
 
             <div class="contact-actions">
 
                 <a
-                    class="btn-primary"
                     href="https://wa.me/966534410774"
                     target="_blank"
-                >
-                    WhatsApp
+                    class="primary-button"
+                    data-en="Request Help"
+                    data-ar="اطلب المساعدة">
+                    Request Help
                 </a>
 
                 <a
-                    class="btn-outline"
                     href="mailto:hassan@8n.sa"
-                >
+                    class="secondary-button"
+                    data-en="Email Us"
+                    data-ar="راسلنا">
                     Email Us
                 </a>
 
@@ -2169,118 +1851,95 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =========================
          FOOTER
-    ========================================== -->
+    ========================== -->
 
     <footer>
 
         <div class="footer-grid">
 
+            <div class="footer-column">
 
-            <div class="footer-brand">
-
-                <strong>8N</strong>
+                <div class="footer-logo">
+                    8N
+                </div>
 
                 <p
-                    data-en="Your trusted partner in digital solutions, cybersecurity, compliance and business growth."
-                    data-ar="شريكك الموثوق في الحلول الرقمية والأمن السيبراني والامتثال ونمو الأعمال."
-                >
-                    Your trusted partner in digital solutions, cybersecurity, compliance and business growth.
+                    data-en="Digital solutions for modern Saudi businesses."
+                    data-ar="حلول رقمية للشركات السعودية الحديثة.">
+
+                    Digital solutions for modern Saudi businesses.
+
                 </p>
 
             </div>
 
 
-            <div>
+            <div class="footer-column">
 
                 <h4
                     data-en="Quick Links"
-                    data-ar="روابط سريعة"
-                >
+                    data-ar="روابط سريعة">
                     Quick Links
                 </h4>
 
-                <ul>
+                <a href="#home"
+                   data-en="Home"
+                   data-ar="الرئيسية">
+                    Home
+                </a>
 
-                    <li>
-                        <a href="#home">Home</a>
-                    </li>
+                <a href="#services"
+                   data-en="Services"
+                   data-ar="الخدمات">
+                    Services
+                </a>
 
-                    <li>
-                        <a href="#services">Services</a>
-                    </li>
+                <a href="#about"
+                   data-en="About"
+                   data-ar="من نحن">
+                    About
+                </a>
 
-                    <li>
-                        <a href="#about">About</a>
-                    </li>
-
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-
-                </ul>
+                <a href="#contact"
+                   data-en="Contact"
+                   data-ar="تواصل معنا">
+                    Contact
+                </a>
 
             </div>
 
 
-            <div>
+            <div class="footer-column">
 
                 <h4
                     data-en="Services"
-                    data-ar="الخدمات"
-                >
+                    data-ar="الخدمات">
                     Services
                 </h4>
 
-                <ul>
-
-                    <li>
-                        <a href="#services">Domain & Hosting</a>
-                    </li>
-
-                    <li>
-                        <a href="#services">Microsoft 365</a>
-                    </li>
-
-                    <li>
-                        <a href="#services">Web Development</a>
-                    </li>
-
-                    <li>
-                        <a href="#services">Cybersecurity</a>
-                    </li>
-
-                    <li>
-                        <a href="#services">Vendor Registration</a>
-                    </li>
-
-                </ul>
+                <a href="#services">Microsoft 365</a>
+                <a href="#services">Cybersecurity</a>
+                <a href="#services">Web Development</a>
+                <a href="#services">Vendor Registration</a>
 
             </div>
 
 
-            <div class="footer-contact">
+            <div class="footer-column">
 
                 <h4
-                    data-en="Contact Us"
-                    data-ar="تواصل معنا"
-                >
-                    Contact Us
+                    data-en="Contact"
+                    data-ar="التواصل">
+                    Contact
                 </h4>
 
-                <p>
-                    📞 +966 53 441 0774
-                </p>
-
-                <p>
-                    ✉ hassan@8n.sa
-                </p>
-
+                <p>+966 53 441 0774</p>
+                <p>hassan@8n.sa</p>
                 <p
                     data-en="Saudi Arabia"
-                    data-ar="المملكة العربية السعودية"
-                >
+                    data-ar="المملكة العربية السعودية">
                     Saudi Arabia
                 </p>
 
@@ -2292,11 +1951,13 @@
         <div class="footer-bottom">
 
             <span>
-                © 2026 8N. All Rights Reserved.
+                © 2026 8N
             </span>
 
-            <span>
-                Privacy Policy &nbsp; | &nbsp; Terms
+            <span
+                data-en="All Rights Reserved."
+                data-ar="جميع الحقوق محفوظة.">
+                All Rights Reserved.
             </span>
 
         </div>
@@ -2304,88 +1965,69 @@
     </footer>
 
 
-    <!-- =========================================
+    <!-- =========================
          JAVASCRIPT
-    ========================================== -->
+    ========================== -->
 
     <script>
 
-        /* =========================================
-           LANGUAGE SWITCHER
-        ========================================== */
-
-        let currentLanguage = "en";
+        let language = "en";
 
 
         function toggleLanguage() {
 
-            currentLanguage =
-                currentLanguage === "en"
-                    ? "ar"
-                    : "en";
+            language = language === "en" ? "ar" : "en";
 
-
-            document.documentElement.lang =
-                currentLanguage;
+            document.documentElement.lang = language;
 
             document.documentElement.dir =
-                currentLanguage === "ar"
-                    ? "rtl"
-                    : "ltr";
-
+                language === "ar" ? "rtl" : "ltr";
 
             document.body.classList.toggle(
-                "arabic",
-                currentLanguage === "ar"
+                "ar",
+                language === "ar"
             );
 
 
-            document
-                .querySelectorAll("[data-en][data-ar]")
-                .forEach(element => {
+            document.querySelectorAll(
+                "[data-en][data-ar]"
+            ).forEach(element => {
 
-                    element.textContent =
-                        element.getAttribute(
-                            `data-${currentLanguage}`
-                        );
+                element.textContent =
+                    element.getAttribute(
+                        "data-" + language
+                    );
 
-                });
+            });
 
 
             document.getElementById(
-                "languageBtn"
+                "languageButton"
             ).textContent =
-                currentLanguage === "en"
+                language === "en"
                     ? "عربي"
                     : "EN";
-
         }
 
 
-        /* =========================================
-           HEADER SCROLL
-        ========================================== */
+        /* Header on scroll */
 
-        const header =
-            document.getElementById("header");
+        window.addEventListener("scroll", function() {
 
+            const header =
+                document.getElementById("header");
 
-        window.addEventListener(
-            "scroll",
-            () => {
+            if (window.scrollY > 40) {
 
-                if (window.scrollY > 40) {
+                header.classList.add("scrolled");
 
-                    header.classList.add("scrolled");
+            } else {
 
-                } else {
-
-                    header.classList.remove("scrolled");
-
-                }
+                header.classList.remove("scrolled");
 
             }
-        );
+
+        });
 
     </script>
 
